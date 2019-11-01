@@ -1,0 +1,15 @@
+{
+  "name": "congressional-district-mapping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "leaflet-ajax": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steven Kast",
+  "license": "ISC"
+}
