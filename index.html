@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin="" />
@@ -21,33 +23,85 @@
 
 <body>
 
-    <h1>Mapping Test</h1>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand h1" href="#">Objective Congressional Districts Mapping</a>
+    </nav>
 
-    <div id="mapid"></div>
 
-    <script>
-        var mymap = L.map('mapid').setView([39.5070, -84.7452], 13);
+    <div class="container">
 
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: 'mapbox.streets',
-            accessToken: 'pk.eyJ1Ijoic3Rldmthc3QiLCJhIjoiY2sxY2ZvdTZpMGRkdzNpcG1pOTZsZXdkOSJ9.shmP2nU2GXBRp4z3LkpT5Q'
-        }).addTo(mymap);
+        <div class="row pt-3 mx-auto">
 
-        // loading GeoJSON file - Here my html and usa_adm.geojson file resides in same folder
-        // $.getJSON("tl_2019_39_tract.json", function (data) {
-        //     // L.geoJson function is used to parse geojson file and load on to map
-        //     L.geoJson(data).addTo(newMap);
-        // });
+            <div class="col-7">
 
-        var polygon = L.polygon([
-            [39.5050, -84.7452],
-            [39.5090, -84.7492],
-            [39.5050, -84.7412]
-        ]).addTo(mymap);
+                <div id="mapid"></div>
 
-    </script>
+                <script>
+                    var mymap = L.map('mapid').setView([39.5070, -84.7452], 13);
+
+                    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        maxZoom: 18,
+                        id: 'mapbox.streets',
+                        accessToken: 'pk.eyJ1Ijoic3Rldmthc3QiLCJhIjoiY2sxY2ZvdTZpMGRkdzNpcG1pOTZsZXdkOSJ9.shmP2nU2GXBRp4z3LkpT5Q'
+                    }).addTo(mymap);
+
+                    // loading GeoJSON file - Here my html and usa_adm.geojson file resides in same folder
+                    // $.getJSON("tl_2019_39_tract.json", function (data) {
+                    //     // L.geoJson function is used to parse geojson file and load on to map
+                    //     L.geoJson(data).addTo(newMap);
+                    // });
+
+                    var polygon = L.polygon([
+                        [39.5050, -84.7452],
+                        [39.5090, -84.7492],
+                        [39.5050, -84.7412]
+                    ]).addTo(mymap);
+
+                </script>
+
+            </div>
+
+            <div class="col-5">
+                <h1>Settings</h1>
+
+                <form>
+                    <div class="form-row align-items-center">
+                      <div class="col-auto my-1">
+                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                          <option selected>Algorithm</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                      <div class="col-auto my-1">
+                        <div class="custom-control custom-checkbox mr-sm-2">
+                          <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                          <label class="custom-control-label" for="customControlAutosizing">Color Blind Mode</label>
+                        </div>
+                      </div>
+                      <div class="col-auto my-1">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
 </body>
 

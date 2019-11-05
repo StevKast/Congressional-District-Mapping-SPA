@@ -1,5 +1,8 @@
 
 #mapid { 
-    height: 750px;
-    max-width: 66%; 
+    height: 750px; 
+}
+
+body {
+    background-image: url("imgs/flags.gif");
 }
