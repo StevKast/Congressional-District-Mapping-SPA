@@ -46,11 +46,21 @@
                         accessToken: 'pk.eyJ1Ijoic3Rldmthc3QiLCJhIjoiY2sxY2ZvdTZpMGRkdzNpcG1pOTZsZXdkOSJ9.shmP2nU2GXBRp4z3LkpT5Q'
                     }).addTo(mymap);
 
+                    // $.ajax({
+                    //     url: 'https://api.myjson.com/bins/bq6eu',
+                    //     success: function (response) {
+                    //         console.log(response.string);
+                    //     },
+                    //     error: function (response) {
+                    //         console.log('server error');
+                    //     }
+                    // })
+
                     // loading GeoJSON file - Here my html and usa_adm.geojson file resides in same folder
-                    // $.getJSON("tl_2019_39_tract.json", function (data) {
-                    //     // L.geoJson function is used to parse geojson file and load on to map
-                    //     L.geoJson(data).addTo(newMap);
-                    // });
+                    $.getJSON("tl_2019_39_tract.json", function (data) {
+                        // L.geoJson function is used to parse geojson file and load on to map
+                        L.geoJson(data).addTo(newMap);
+                    });
 
                     var polygon = L.polygon([
                         [39.5050, -84.7452],
@@ -67,26 +77,27 @@
 
                 <form>
                     <div class="form-row align-items-center">
-                      <div class="col-auto my-1">
-                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                          <option selected>Algorithm</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
-                      </div>
-                      <div class="col-auto my-1">
-                        <div class="custom-control custom-checkbox mr-sm-2">
-                          <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                          <label class="custom-control-label" for="customControlAutosizing">Color Blind Mode</label>
+                        <div class="col-auto my-1">
+                            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <option selected>Algorithm</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
                         </div>
-                      </div>
-                      <div class="col-auto my-1">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </div>
+                        <div class="col-auto my-1">
+                            <div class="custom-control custom-checkbox mr-sm-2">
+                                <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                                <label class="custom-control-label" for="customControlAutosizing">Color Blind
+                                    Mode</label>
+                            </div>
+                        </div>
+                        <div class="col-auto my-1">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
                     </div>
-                  </form>
+                </form>
 
             </div>
 
