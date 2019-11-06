@@ -28,7 +28,7 @@
     </nav>
 
 
-    <div class="container m-0 p-2">
+    <div class="container-fluid">
 
         <div class="row pt-3">
 
@@ -56,7 +56,7 @@
                     //     }
                     // })
 
-                    // loading GeoJSON file - Here my html and usa_adm.geojson file resides in same folder
+                    // loading GeoJSON file
                     $.getJSON("tl_2019_39_tract.json", function (data) {
                         // L.geoJson function is used to parse geojson file and load on to map
                         L.geoJson(data).addTo(mymap);
