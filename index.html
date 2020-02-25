@@ -46,20 +46,49 @@
                         accessToken: 'pk.eyJ1Ijoic3Rldmthc3QiLCJhIjoiY2sxY2ZvdTZpMGRkdzNpcG1pOTZsZXdkOSJ9.shmP2nU2GXBRp4z3LkpT5Q'
                     }).addTo(mymap);
 
-                    // $.ajax({
-                    //     url: 'https://api.myjson.com/bins/bq6eu',
-                    //     success: function (response) {
-                    //         console.log(response.string);
-                    //     },
-                    //     error: function (response) {
-                    //         console.log('server error');
-                    //     }
-                    // })
 
                     // loading GeoJSON file
-                    $.getJSON("Components/tl_2019_39_tract.json", function (data) {
+                    $.getJSON("Components/Lloyd_Result.json", function (data) {
                         // L.geoJson function is used to parse geojson file and load on to map
-                        L.geoJson(data).addTo(mymap);
+                        //L.geoJson(data).addTo(mymap);
+
+                        L.geoJSON(data, {
+                            style: function (feature) {
+                                switch (feature.properties.district) {
+                                    case 'd1': return { color: "#ff0000" };
+                                    case 'd2': return { color: "#00ff00" };
+                                    case 'd3': return { color: "#0000ff" };
+                                    case 'd4': return { color: "#ffff00" };
+                                    case 'd5': return { color: "#ff00ff" };
+                                    case 'd6': return { color: "#00ffff" };
+                                    case 'd7': return { color: "#880000" };
+                                    case 'd8': return { color: "#008800" };
+                                    case 'd9': return { color: "#000088" };
+                                    case 'd10': return { color: "#ff0000" };
+                                    case 'd11': return { color: "#00ff00" };
+                                    case 'd12': return { color: "#ff00ff" };
+                                    case 'd13': return { color: "#0000ff" };
+                                    case 'd14': return { color: "#ffff00" };
+                                    case 'd15': return { color: "#00ffff" };
+                                    case 'd16': return { color: "#885500" };
+                                    case 'd17': return { color: "#ff0033" };
+                                    case 'd18': return { color: "#33ff33" };
+                                    default : return { color: "#000000" };
+                                }
+                            }
+                        }).addTo(mymap);
+
+                        // L.geoJSON(data, {
+                        //     style: function (feature) {
+                        //         if (feature.properties.GEOID.includes("2")) {
+                        //             return { color: "#ff0088" };
+                        //         } else {
+                        //             return { color: "#8800ff" };
+                        //         }
+                        //     }
+                        // }).addTo(mymap);
+
+                        
                     });
 
                     var polygon = L.polygon([
@@ -86,9 +115,9 @@
                                 <option value="3">Algorithm 03</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
-                                <h6 class="mt-3">Other Settings</h6>
+                            <h6 class="mt-3">Other Settings</h6>
                             <div class="col-auto my-1">
                                 <div class="custom-control custom-checkbox mr-sm-2">
                                     <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
