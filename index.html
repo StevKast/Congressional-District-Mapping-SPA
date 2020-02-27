@@ -37,7 +37,7 @@
                 <div id="mapid"></div>
 
                 <script>
-                    var mymap = L.map('mapid').setView([39.5070, -84.7452], 13);
+                    var mymap = L.map('mapid').setView([40.4173, -82.9071], 7.4);
 
                     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
                         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -55,27 +55,29 @@
                         L.geoJSON(data, {
                             style: function (feature) {
                                 switch (feature.properties.district) {
-                                    case 'd1': return { color: "#ff0000" };
-                                    case 'd2': return { color: "#00ff00" };
-                                    case 'd3': return { color: "#0000ff" };
-                                    case 'd4': return { color: "#ffff00" };
-                                    case 'd5': return { color: "#ff00ff" };
-                                    case 'd6': return { color: "#00ffff" };
-                                    case 'd7': return { color: "#880000" };
-                                    case 'd8': return { color: "#008800" };
-                                    case 'd9': return { color: "#000088" };
-                                    case 'd10': return { color: "#ff0000" };
-                                    case 'd11': return { color: "#00ff00" };
-                                    case 'd12': return { color: "#ff00ff" };
-                                    case 'd13': return { color: "#0000ff" };
-                                    case 'd14': return { color: "#ffff00" };
-                                    case 'd15': return { color: "#00ffff" };
-                                    case 'd16': return { color: "#885500" };
-                                    case 'd17': return { color: "#ff0033" };
-                                    case 'd18': return { color: "#33ff33" };
+                                    case 'd1': return { color: "#FFBD5B" };
+                                    case 'd2': return { color: "#80BFFF" };
+                                    case 'd3': return { color: "#69FF70" };
+                                    case 'd4': return { color: "#FFff59" };
+                                    case 'd5': return { color: "#B053CC" };
+                                    case 'd6': return { color: "#FFBD5B" };
+                                    case 'd7': return { color: "#80BFFF" };
+                                    case 'd8': return { color: "#69FF70" };
+                                    case 'd9': return { color: "#FF66ff" };
+                                    case 'd10': return { color: "#B053CC" };
+                                    case 'd11': return { color: "#FFBD5B" };
+                                    case 'd12': return { color: "#80BFFF" };
+                                    case 'd13': return { color: "#69FF70" };
+                                    case 'd14': return { color: "#FF6659" };
+                                    case 'd15': return { color: "#B053CC" };
+                                    case 'd16': return { color: "#FFBD5B" };
+                                    case 'd17': return { color: "#80BFFF" };
+                                    case 'd18': return { color: "#69FF70" };
                                     default : return { color: "#000000" };
                                 }
-                            }
+                            },
+                            weight: .6,
+                            fillOpacity: .4
                         }).addTo(mymap);
 
                         // L.geoJSON(data, {
@@ -90,12 +92,6 @@
 
                         
                     });
-
-                    var polygon = L.polygon([
-                        [39.5050, -84.7452],
-                        [39.5090, -84.7492],
-                        [39.5050, -84.7412]
-                    ]).addTo(mymap);
 
                 </script>
 
