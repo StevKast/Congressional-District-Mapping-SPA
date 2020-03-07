@@ -23,6 +23,7 @@
 
 <body>
 
+
     <nav class="navbar navbar-inverse navbar-dark bg-dark">
         <div class = "container-fluid">
             <div class = "navber-header">
@@ -33,6 +34,7 @@
                 <li><a href="info.html">Info</a></li>
             </ul>
         </div>
+
     </nav>
 
 
@@ -45,7 +47,7 @@
                 <div id="mapid"></div>
 
                 <script>
-                    var mymap = L.map('mapid').setView([39.5070, -84.7452], 13);
+                    var mymap = L.map('mapid').setView([40.1855, -82.4153], 7);
 
                     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
                         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -54,27 +56,50 @@
                         accessToken: 'pk.eyJ1Ijoic3Rldmthc3QiLCJhIjoiY2sxY2ZvdTZpMGRkdzNpcG1pOTZsZXdkOSJ9.shmP2nU2GXBRp4z3LkpT5Q'
                     }).addTo(mymap);
 
-                    // $.ajax({
-                    //     url: 'https://api.myjson.com/bins/bq6eu',
-                    //     success: function (response) {
-                    //         console.log(response.string);
-                    //     },
-                    //     error: function (response) {
-                    //         console.log('server error');
-                    //     }
-                    // })
 
                     // loading GeoJSON file
-                    $.getJSON("Components/tl_2019_39_tract.json", function (data) {
+                    $.getJSON("Components/Lloyd_Result.json", function (data) {
                         // L.geoJson function is used to parse geojson file and load on to map
-                        L.geoJson(data).addTo(mymap);
-                    });
+                        //L.geoJson(data).addTo(mymap);
 
-                    var polygon = L.polygon([
-                        [39.5050, -84.7452],
-                        [39.5090, -84.7492],
-                        [39.5050, -84.7412]
-                    ]).addTo(mymap);
+                        L.geoJSON(data, {
+                            style: function (feature) {
+                                switch (feature.properties.district) {
+                                    case 'd1': return { color: "#FFBD5B" };
+                                    case 'd2': return { color: "#80BFFF" };
+                                    case 'd3': return { color: "#69FF70" };
+                                    case 'd4': return { color: "#FFff59" };
+                                    case 'd5': return { color: "#B053CC" };
+                                    case 'd6': return { color: "#FFBD5B" };
+                                    case 'd7': return { color: "#80BFFF" };
+                                    case 'd8': return { color: "#69FF70" };
+                                    case 'd9': return { color: "#FF66ff" };
+                                    case 'd10': return { color: "#B053CC" };
+                                    case 'd11': return { color: "#FFBD5B" };
+                                    case 'd12': return { color: "#80BFFF" };
+                                    case 'd13': return { color: "#690070" };
+                                    case 'd14': return { color: "#FF6659" };
+                                    case 'd15': return { color: "#B053CC" };
+                                    case 'd16': return { color: "#FFBD5B" };
+                                    default : return { color: "#000000" };
+                                }
+                            },
+                            weight: .6,
+                            fillOpacity: .4
+                        }).addTo(mymap);
+
+                        // L.geoJSON(data, {
+                        //     style: function (feature) {
+                        //         if (feature.properties.GEOID.includes("2")) {
+                        //             return { color: "#ff0088" };
+                        //         } else {
+                        //             return { color: "#8800ff" };
+                        //         }
+                        //     }
+                        // }).addTo(mymap);
+
+                        
+                    });
 
                 </script>
 
@@ -94,9 +119,9 @@
                                 <option value="3">Algorithm 03</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
-                                <h6 class="mt-3">Other Settings</h6>
+                            <h6 class="mt-3">Other Settings</h6>
                             <div class="col-auto my-1">
                                 <div class="custom-control custom-checkbox mr-sm-2">
                                     <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
