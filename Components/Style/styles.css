@@ -5,6 +5,11 @@
 
 .memberPic {
 	height: 300px;
-	margin-left: 12.5%;
-	text-align: center;
+	padding-bottom: 25px;
+}
+
+.infoPic {
+	height: 300px;
+	padding-bottom: 25px;
+	padding-top: 25px;
 }
