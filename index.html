@@ -57,30 +57,39 @@
                     }).addTo(mymap);
 
 
+                    var colors = [];
+                    
+                    for (let index = 0; index < 16; index++) {
+                        colors[index] = '#' + Math.floor(Math.random()*16777215).toString(16);
+                    }
+
+                    var lloydResultPath = "Components/result_Lloyd_iteration6.json";
+                    var splitlineResultPath = "result_Splitline.json";
+
                     // loading GeoJSON file
-                    $.getJSON("Components/result_Lloyd_iteration6.json", function (data) {
+                    $.getJSON(lloydResultPath, function (data) {
                         // L.geoJson function is used to parse geojson file and load on to map
                         //L.geoJson(data).addTo(mymap);
 
                         L.geoJSON(data, {
                             style: function (feature) {
                                 switch (feature.properties.district) {
-                                    case 'd1': return { color: "#FABD5B" };
-                                    case 'd2': return { color: "#80B3FF" };
-                                    case 'd3': return { color: "#69F270" };
-                                    case 'd4': return { color: "#FFff59" };
-                                    case 'd5': return { color: "#BA53CC" };
-                                    case 'd6': return { color: "#FCBD5B" };
-                                    case 'd7': return { color: "#80BCFF" };
-                                    case 'd8': return { color: "#69FF70" };
-                                    case 'd9': return { color: "#FF66ff" };
-                                    case 'd10': return { color: "#B053CC" };
-                                    case 'd11': return { color: "#FFBD5B" };
-                                    case 'd12': return { color: "#80BFFF" };
-                                    case 'd13': return { color: "#690070" };
-                                    case 'd14': return { color: "#FF6659" };
-                                    case 'd15': return { color: "#B053C4" };
-                                    case 'd16': return { color: "#FFB15B" };
+                                    case 'd1': return { color: colors[0] };
+                                    case 'd2': return { color: colors[1] };
+                                    case 'd3': return { color: colors[2] };
+                                    case 'd4': return { color: colors[3] };
+                                    case 'd5': return { color: colors[4] };
+                                    case 'd6': return { color: colors[5] };
+                                    case 'd7': return { color: colors[6] };
+                                    case 'd8': return { color: colors[7] };
+                                    case 'd9': return { color: colors[8] };
+                                    case 'd10': return { color: colors[9] };
+                                    case 'd11': return { color: colors[10] };
+                                    case 'd12': return { color: colors[11] };
+                                    case 'd13': return { color: colors[12] };
+                                    case 'd14': return { color: colors[13] };
+                                    case 'd15': return { color: colors[14] };
+                                    case 'd16': return { color: colors[15] };
                                     default : return { color: "#000000" };
                                 }
                             },
