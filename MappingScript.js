@@ -12,20 +12,20 @@ $(document).ready(function () {
 
     var lloydResultPath = "result_Lloyd.json";
     var splitlineResultPath = "ShortestSplitLine_Result.json";
+    var forestResultPath = "";
 
     var currentAlgorithm = lloydResultPath;
 
     drawMap(currentAlgorithm, mymap);
 
     $("#algSelector").change(function () {
-
-        
-
         $("select option:selected").each(function () {
             if(this.value == 1) {
                 currentAlgorithm = lloydResultPath;
             } else if (this.value == 2) {
                 currentAlgorithm = splitlineResultPath;
+            } else if (this.value == 3) {
+                currentAlgorithm = forestResultPath;
             }
         });
         clearMap(mymap);
@@ -38,18 +38,12 @@ $(document).ready(function () {
 
 function drawMap(algorithmJSON, map) {
 
-    var colors = [];
-
-    for (let index = 0; index < 16; index++) {
-        colors[index] = '#' + Math.floor(Math.random() * 16777215).toString(16);
-    }
-
+    var colors = generateColors(16);
 
     // loading GeoJSON file
     $.getJSON(algorithmJSON, function (data) {
+        
         // L.geoJson function is used to parse geojson file and load on to map
-        //L.geoJson(data).addTo(mymap);
-
         L.geoJSON(data, {
             style: function (feature) {
                 switch (feature.properties.district) {
@@ -76,17 +70,6 @@ function drawMap(algorithmJSON, map) {
             fillOpacity: .4
         }).addTo(map);
 
-        // L.geoJSON(data, {
-        //     style: function (feature) {
-        //         if (feature.properties.GEOID.includes("2")) {
-        //             return { color: "#ff0088" };
-        //         } else {
-        //             return { color: "#8800ff" };
-        //         }
-        //     }
-        // }).addTo(mymap);
-
-
     });
 }
 
@@ -101,4 +84,15 @@ function clearMap(map) {
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1Ijoic3Rldmthc3QiLCJhIjoiY2sxY2ZvdTZpMGRkdzNpcG1pOTZsZXdkOSJ9.shmP2nU2GXBRp4z3LkpT5Q'
     }).addTo(map);
+}
+
+function generateColors(numberOfColors) {
+    
+    var colors = [];
+
+    for (let index = 0; index < numberOfColors; index++) {
+        colors[index] = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    }
+
+    return colors;
 }
