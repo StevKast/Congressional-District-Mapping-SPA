@@ -24,18 +24,25 @@
 <body>
 
 
-    <nav class="navbar navbar-inverse navbar-dark bg-dark">
-        <div class = "container-fluid">
-            <div class = "navber-header">
-                <a class="navbar-brand h1" href="index.html">Objective Congressional Districts Mapping</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li><a href="member.html">Members</a></li>
-                <li><a href="info.html">Info</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand h1" href="index.html">Objective Congressional Districts Mapping</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="info.html">Districting Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="member.html">Authors</a>
+            </li>
+          </ul>
         </div>
-
-    </nav>
+      </nav>
 
 
     <div class="container-fluid">
@@ -46,71 +53,7 @@
 
                 <div id="mapid"></div>
 
-                <script>
-                    var mymap = L.map('mapid').setView([40.1855, -82.4153], 7);
-
-                    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                        maxZoom: 18,
-                        id: 'mapbox.streets',
-                        accessToken: 'pk.eyJ1Ijoic3Rldmthc3QiLCJhIjoiY2sxY2ZvdTZpMGRkdzNpcG1pOTZsZXdkOSJ9.shmP2nU2GXBRp4z3LkpT5Q'
-                    }).addTo(mymap);
-
-
-                    var colors = [];
-                    
-                    for (let index = 0; index < 16; index++) {
-                        colors[index] = '#' + Math.floor(Math.random()*16777215).toString(16);
-                    }
-
-                    var lloydResultPath = "Components/result_Lloyd_iteration6.json";
-                    var splitlineResultPath = "result_Splitline.json";
-
-                    // loading GeoJSON file
-                    $.getJSON(lloydResultPath, function (data) {
-                        // L.geoJson function is used to parse geojson file and load on to map
-                        //L.geoJson(data).addTo(mymap);
-
-                        L.geoJSON(data, {
-                            style: function (feature) {
-                                switch (feature.properties.district) {
-                                    case 'd1': return { color: colors[0] };
-                                    case 'd2': return { color: colors[1] };
-                                    case 'd3': return { color: colors[2] };
-                                    case 'd4': return { color: colors[3] };
-                                    case 'd5': return { color: colors[4] };
-                                    case 'd6': return { color: colors[5] };
-                                    case 'd7': return { color: colors[6] };
-                                    case 'd8': return { color: colors[7] };
-                                    case 'd9': return { color: colors[8] };
-                                    case 'd10': return { color: colors[9] };
-                                    case 'd11': return { color: colors[10] };
-                                    case 'd12': return { color: colors[11] };
-                                    case 'd13': return { color: colors[12] };
-                                    case 'd14': return { color: colors[13] };
-                                    case 'd15': return { color: colors[14] };
-                                    case 'd16': return { color: colors[15] };
-                                    default : return { color: "#000000" };
-                                }
-                            },
-                            weight: .6,
-                            fillOpacity: .4
-                        }).addTo(mymap);
-
-                        // L.geoJSON(data, {
-                        //     style: function (feature) {
-                        //         if (feature.properties.GEOID.includes("2")) {
-                        //             return { color: "#ff0088" };
-                        //         } else {
-                        //             return { color: "#8800ff" };
-                        //         }
-                        //     }
-                        // }).addTo(mymap);
-
-                        
-                    });
-
-                </script>
+                <script src="MappingScript.js"></script>
 
             </div>
 
@@ -122,10 +65,10 @@
                         <div class="form-group">
                             <label class="mr-sm-2" for="inlineFormCustomSelect">Visualization:</label>
                             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                <option selected>Current Census Tracts</option>
-                                <option value="1">Lloyd's Algorithm</option>
+                                <option>Current Census Tracts</option>
+                                <option value="1" selected>Lloyd's Algorithm</option>
                                 <option value="2">Shortest-Splitline Algorithm</option>
-                                <option value="3">Algorithm 03</option>
+                                <option value="3">Forest Fire Fill</option>
                             </select>
                         </div>
 

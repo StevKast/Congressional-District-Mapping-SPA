@@ -5,122 +5,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta author = "Tim Romer">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta author="Tim Romer">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="Components/Style/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <title>Congressional District Mapping Team</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-inverse navbar-dark bg-dark">
-        <div class = "container-fluid">
-            <div class = "navber-header">
-                <a class="navbar-brand h1" href="index.html">Objective Congressional Districts Mapping</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li><a href="member.html">Members</a></li>
-                <li class = "active"><a href="info.html">Info</a></li>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand h1" href="index.html">Objective Congressional Districts Mapping</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="info.html">Districting Info <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="member.html">Authors</a>
+                </li>
             </ul>
         </div>
     </nav>
-    <div class = "container-fluid">
-        <div class = "row">
-            <div class = "col-3"></div>
-            <div class = "col">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col">
                 <h1>What is a Congressional District?</h1>
                 <p>
-                    The United States uses congressional districts for representation in congress. There are 435 seats in the house of representatives and each seat has one representative who represents all of the people that live in that district. Each congressional district represents roughly 747,000 people and this is true across the country. Each time a census done, states can gain and lose the amount of districts based on the population in that state. For example, after the 2010 census, Ohio lost two congressional districts due to population changes in the state.
+                    The United States uses congressional districts for representation in congress. There are 435 seats
+                    in the house of representatives and each seat has one representative who represents all of the
+                    people that live in that district. Each congressional district represents roughly 747,000 people and
+                    this is true across the country. Each time a census done, states can gain and lose the amount of
+                    districts based on the population in that state. For example, after the 2010 census, Ohio lost two
+                    congressional districts due to population changes in the state.
                 </p>
-                <img src="Components/Info_Pics/Ohio_Congressional_Districts,_113th_Congress.jpg" alt = "Ohio Congressional Districts" class = "infoPic mx-auto d-block">
+                <img src="Components/Info_Pics/Ohio_Congressional_Districts,_113th_Congress.jpg"
+                    alt="Ohio Congressional Districts" class="infoPic mx-auto d-block">
                 <p>
-                    Above is the current congressional district map for the state of Ohio. As you can see, there are 16 districts which correspond to the 16 seats that Ohio has.
+                    Above is the current congressional district map for the state of Ohio. As you can see, there are 16
+                    districts which correspond to the 16 seats that Ohio has.
                 </p>
-                <img src="Components/Info_Pics/Ohio_US_Congressional_District_8_(since_2013).jpg" alt = "Ohio District 8" class = "infoPic mx-auto d-block">
+                <img src="Components/Info_Pics/Ohio_US_Congressional_District_8_(since_2013).jpg" alt="Ohio District 8"
+                    class="infoPic mx-auto d-block">
                 <p>
-                    Above is the current 8th congressional district for the state of Ohio. This is the district where Miami University is in and the current representative is Republican Warren Davidson.  
+                    Above is the current 8th congressional district for the state of Ohio. This is the district where
+                    Miami University is in and the current representative is Republican Warren Davidson.
                 </p>
                 <p>
-                    The history of the house of representatives is extensive but it was created to solve the issue of how to fairly represent the citizens of the United States. During the constitutional conventions back in the late 1700's, there was an issue on how the people were to be represented. There were two major plans, the New Jersey plan which constitutes two houses both of which represents the people. The other plan was the Virginia plan which eventually was put into the Constitution. The Virginia plan constitutes a two house system where there is an upper house, the senate, which represents the states and a lower house, the house of representitives, which fairly represents the people.
+                    The history of the house of representatives is extensive but it was created to solve the issue of
+                    how to fairly represent the citizens of the United States. During the constitutional conventions
+                    back in the late 1700's, there was an issue on how the people were to be represented. There were two
+                    major plans, the New Jersey plan which constitutes two houses both of which represents the people.
+                    The other plan was the Virginia plan which eventually was put into the Constitution. The Virginia
+                    plan constitutes a two house system where there is an upper house, the senate, which represents the
+                    states and a lower house, the house of representitives, which fairly represents the people.
                 </p>
             </div>
-            <div class = "col-3"></div>
+            <div class="col-3"></div>
         </div>
-        <div class = "row">
-            <div class = "col-3"></div>
-            <div class = "col">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col">
                 <h1>Why do Congressional Districts change?</h1>
                 <p>
-                    Every ten years, the united states government performs a census that will track population shifts as well as other things. There are two main reasons for a congressional district to change. The reasons are apportionment and balancing of district population.
+                    Every ten years, the united states government performs a census that will track population shifts as
+                    well as other things. There are two main reasons for a congressional district to change. The reasons
+                    are apportionment and balancing of district population.
                 </p>
                 <h2>Apportionment</h2>
                 <p>
-                    
+
                 </p>
                 <h2>Balancing District Population</h2>
                 <p>
-                    
+
                 </p>
             </div>
-            <div class = "col-3"></div>
+            <div class="col-3"></div>
         </div>
-        <div class = "row">
-            <div class = "col-3"></div>
-            <div class = "col">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col">
                 <h1>What is Gerrymandering?</h1>
                 <p>
-                    Gerrymandering, is when politiciance skewthe redistricting process to give themselves (or their political parties) a political advantage over opposing parties. According to Dr. Justin Levitt from the University of Loyola Los Angeles Law School, the different types of advantages that a political party can give itself are cherry-picking voters, eliminating incumbants, eliminating challengers, skewing the representation for a state, diluting minority votes, and splitting communities.
+                    Gerrymandering, is when politiciance skewthe redistricting process to give themselves (or their
+                    political parties) a political advantage over opposing parties. According to Dr. Justin Levitt from
+                    the University of Loyola Los Angeles Law School, the different types of advantages that a political
+                    party can give itself are cherry-picking voters, eliminating incumbants, eliminating challengers,
+                    skewing the representation for a state, diluting minority votes, and splitting communities.
                 </p>
             </div>
-            <div class = "col-3"></div>
+            <div class="col-3"></div>
         </div>
-        <div class = "row">
-            <div class = "col-3"></div>
-            <div class = "col-3">
-                <img src="Components/Info_Pics/obama_2000.PNG" alt ="Illinois District 2000" class = "mx-auto d-block" style = "height:300px">
-                <h2 class = "text-center">Illinois 2000</h2>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3">
+                <img src="Components/Info_Pics/obama_2000.PNG" alt="Illinois District 2000" class="mx-auto d-block"
+                    style="height:300px">
+                <h2 class="text-center">Illinois 2000</h2>
             </div>
-            <div class = "col-3">
-                <img src="Components/Info_Pics/obama_2002.PNG" alt ="Illinois District 2002" class = "mx-auto d-block" style = "height:300px">
-                <h2 class = "text-center">Illinois 2002</h2>
+            <div class="col-3">
+                <img src="Components/Info_Pics/obama_2002.PNG" alt="Illinois District 2002" class="mx-auto d-block"
+                    style="height:300px">
+                <h2 class="text-center">Illinois 2002</h2>
             </div>
-            <div class = "col-3"></div>
+            <div class="col-3"></div>
         </div>
-        <div class = "row">
-            <div class = "col-3"></div>
-            <div class = "col">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col">
                 <h2>Gerrymandering example: Barack Obama 2000</h2>
                 <p>
-                    A great example of gerrymandering to eliminate a challenger is when Barack Obama made a run for the congressional seat in the 2000 election. Prior to 2000, Obama was a state congressman in Illinois and wanted to run for a federal congressional seat against a four time elected incumbant. Despite putting together a very strong campaign, obama suffered a narrow loss to the incumbant. When the redistricting came after the 2000 census, state and party leaders wanted to secure the incumbants seat against an up and coming young politician like obama so they gerrymandered the district in such a way that forced Obama into a different congressional district. The blue pin on the map above is the location of obama's house and you can notice that the blocks surrounding the house were cropped out into a different district.
+                    A great example of gerrymandering to eliminate a challenger is when Barack Obama made a run for the
+                    congressional seat in the 2000 election. Prior to 2000, Obama was a state congressman in Illinois
+                    and wanted to run for a federal congressional seat against a four time elected incumbant. Despite
+                    putting together a very strong campaign, obama suffered a narrow loss to the incumbant. When the
+                    redistricting came after the 2000 census, state and party leaders wanted to secure the incumbants
+                    seat against an up and coming young politician like obama so they gerrymandered the district in such
+                    a way that forced Obama into a different congressional district. The blue pin on the map above is
+                    the location of obama's house and you can notice that the blocks surrounding the house were cropped
+                    out into a different district.
                 </p>
             </div>
-            <div class = "col-3"></div>
+            <div class="col-3"></div>
         </div>
-        <div class = "row">
-            <div class = "col-3"></div>
-            <div class = "col">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col">
                 <h1>The History of Gerrymandering</h1>
             </div>
-            <div class = "col-3"></div>
+            <div class="col-3"></div>
         </div>
-        <div class = "row">
-            <div class = "col-3"></div>
-            <div class = "col">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col">
                 <h1>Algorithmically Generating Districts</h1>
             </div>
-            <div class = "col-3"></div>
+            <div class="col-3"></div>
         </div>
-        <div class = "row">
-            <div class = "col-3"></div>
-            <div class = "col">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col">
                 <h1>Algorithms:</h1>
                 <h2>Lloyd's Algorithm</h2>
                 <h2>Shortest-Splitline Algorithm</h2>
                 <h2>Forest Fire Fill</h2>
             </div>
-            <div class = "col-3"></div>
+            <div class="col-3"></div>
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
 </body>
+
 </html>

@@ -5,59 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="Components/Style/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <title>Congressional District Mapping Team</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-inverse navbar-dark bg-dark">
-        <div class = "container-fluid">
-            <div class = "navber-header">
-                <a class="navbar-brand h1" href="index.html">Objective Congressional Districts Mapping</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class = "active"><a href="member.html">Members</a></li>
-                <li><a href="info.html">Info</a></li>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand h1" href="index.html">Objective Congressional Districts Mapping</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="info.html">Districting Info</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="member.html">Authors <span class="sr-only">(current) </span></a>
+                </li>
             </ul>
         </div>
     </nav>
-    <div class = "container">
-        <div class = "row" style = "height: 50px;"></div>
-        <div class = "row">
-            <div class = "col-1"></div>
-            <div class = "col-4">
-                <img src="Components/Member_Pics/timromer.jpg" alt = "Tim Romer" class = "memberPic mx-auto d-block">
+
+    <div class="container">
+        <div class="row" style="height: 50px;"></div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-4">
+                <img src="Components/Member_Pics/timromer.jpg" alt="Tim Romer" class="memberPic mx-auto d-block">
                 <p>
-                    Hi, my name is Tim Romer and I am in my fourth year here at Miami University. I am majoring in Computer Science and minoring in Statistics. I decided to study computer science because I am passionate about technology and I want to be apart of pushing the boundaries of technology. This past summer, I worked as a technology intern and I worked on the Nielsen Connect Cloud Management team. I was responsible for examining cloud costs and identify strategies to reduce overall cloud spending. I also worked with internal api's to enable greater cloud governance. After graduation, I will be relocating to Chicago to work for Nielsen as a Technical Product Associate.
+                    Hi, my name is Tim Romer and I am in my fourth year here at Miami University. I am majoring in
+                    Computer Science and minoring in Statistics. I decided to study computer science because I am
+                    passionate about technology and I want to be apart of pushing the boundaries of technology. This
+                    past summer, I worked as a technology intern and I worked on the Nielsen Connect Cloud Management
+                    team. I was responsible for examining cloud costs and identify strategies to reduce overall cloud
+                    spending. I also worked with internal api's to enable greater cloud governance. After graduation, I
+                    will be relocating to Chicago to work for Nielsen as a Technical Product Associate.
                 </p>
             </div>
-            <div class = "col-2"></div>
-            <div class = "col-4">
-                <img src="Components/member_Pics/CongDist.jpg" alt = "" class = "memberPic mx-auto d-block">
+            <div class="col-2"></div>
+            <div class="col-4">
+                <img src="Components/member_Pics/CongDist.jpg" alt="" class="memberPic mx-auto d-block">
                 <p>
                     Placeholder for Member Bio.
                 </p>
             </div>
-            <div class = "col-1"></div>
+            <div class="col-1"></div>
         </div>
-        <div class = "row">
-            <div class = "col-1"></div>
-            <div class = "col-4">
-                <img src="Components/member_Pics/CongDist.jpg" alt = "" class = "memberPic mx-auto d-block">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-4">
+                <img src="Components/member_Pics/CongDist.jpg" alt="" class="memberPic mx-auto d-block">
                 <p>
                     Placeholder for Member Bio.
                 </p>
             </div>
-            <div class = "col-2"></div>
-            <div class = "col-4">
-                <img src="Components/member_Pics/CongDist.jpg" alt = "" class = "memberPic mx-auto d-block">
+            <div class="col-2"></div>
+            <div class="col-4">
+                <img src="Components/member_Pics/CongDist.jpg" alt="" class="memberPic mx-auto d-block">
                 <p>
                     Placeholder for Member Bio.
                 </p>
             </div>
-            <div class = "col-1"></div>
+            <div class="col-1"></div>
         </div>
     </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>
