@@ -10,9 +10,9 @@ $(document).ready(function () {
 
 
 
-    var lloydResultPath = "result_Lloyd.json";
+    var lloydResultPath = "Components/result_Lloyd_iteration7.json";
     var splitlineResultPath = "ShortestSplitLine_Result.json";
-    var forestResultPath = "";
+    var forestResultPath = "result_Lloyd.json";
 
     var currentAlgorithm = lloydResultPath;
 
